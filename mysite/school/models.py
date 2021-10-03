@@ -1,3 +1,9 @@
 from django.db import models
+from django.utils import timezone
 
-# Create your models here.
+
+class Person(models.Model):
+    name = models.CharField(max_length=30)
+    surname = models.CharField(max_length=30)
+    sum = models.IntegerField()
+    created_date = models.DateTimeField(default=timezone.now)
