@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Модели в Django</title>
+</head>
+<body class="container">
+    <h1><a href="/">НАЗАД</a></h1>
+    <h2>Статусный список</h2>
+    <table>
+        <thead><th>Имя</th><th>Фамилия</th><th>Счёт</th><th>Статус</th><th></th></thead>
+        {% for person in people %}
+        <tr>
+            <td>{{ person.name }}</td>
+            <td>{{ person.surname }}</td>
+            <td>{{ person.sum }}</td>
+            <td>{{ person.status }}</td>
+            <td><a href="/edit_sum/{{person.id}}">Пополнить счёт</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
