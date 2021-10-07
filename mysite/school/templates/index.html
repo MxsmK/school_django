@@ -5,19 +5,20 @@
     <title>Модели в Django</title>
 </head>
 <body class="container">
-    <h1><a href="/new">СОЗДАТЬ</a></h1>
-    <h1></h1>
+    <h1><a href="/new">ДОБАВИТЬ</a></h1>
+    <h1><a href="/status">СТАТУСНЫЙ СПИСОК</a></h1>
     {% if people.count > 0 %}
-    <h2>Список пользователей</h2>
+    <h2>Класс</h2>
     <table>
-        <thead><th>Id</th><th>Имя</th><th>Фамилия</th><th>Счёт</th><th></th></thead>
+        <thead><th>Имя</th><th>Фамилия</th><th></th></thead>
         {% for person in people %}
         <tr>
-            <td>{{ person.id }}</td>
             <td>{{ person.name }}</td>
             <td>{{ person.surname }}</td>
-            <td>{{ person.sum }}</td>
             <td><a href="edit/{{person.id}}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td>
+            {% if person.is_weak == True %}
+                <td>Болеет</td>
+            {% endif %}
         </tr>
         {% endfor %}
     </table>

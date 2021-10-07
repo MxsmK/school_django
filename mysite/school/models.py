@@ -7,3 +7,5 @@ class Person(models.Model):
     surname = models.CharField(max_length=30)
     sum = models.IntegerField()
     created_date = models.DateTimeField(default=timezone.now)
+    is_free = models.BooleanField()
+    is_weak = models.BooleanField()

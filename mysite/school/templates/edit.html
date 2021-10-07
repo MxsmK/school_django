@@ -15,9 +15,16 @@
             <label>Введите Фамилию</label><br>
             <input type="text" name="surname" value="{{person.surname}}" />
         </p>
+
         <p>
-            <label>Введите Фамилию</label><br>
-            <input type="number" name="sum" value="{{person.sum}}" />
+            <label>Болеет?</label><br>
+            <p><input type="checkbox" name="is_weak" value=True>Да</p>
+            <p><input type="checkbox" name="is_weak" value=False>Нет</p>
+        </p>
+        <p>
+            <label>Бесплатник?</label><br>
+            <p><input type="checkbox" name="is_free" value=True>Да</p>
+            <p><input type="checkbox" name="is_free" value=False>Нет</p>
         </p>
         <input type="submit" value="Сохранить" >
     </form>
