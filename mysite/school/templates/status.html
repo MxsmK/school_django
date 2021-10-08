@@ -13,7 +13,15 @@
         <tr>
             <td>{{ person.name }}</td>
             <td>{{ person.surname }}</td>
-            <td>{{ person.sum }}</td>
+            {% if person.status != "ЕСТ, БЕСПЛАТНИК" %}
+                {% if person.status != "БОЛЕЕТ" %}
+                    <td>{{ person.sum }}</td>
+                {% else %}
+                    <td>---</td>
+                {% endif %}
+            {% else %}
+                <td>---</td>
+            {% endif %}
             <td>{{ person.status }}</td>
             <td><a href="/edit_sum/{{person.id}}">Пополнить счёт</a></td>
         </tr>
