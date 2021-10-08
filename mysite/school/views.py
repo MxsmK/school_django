@@ -61,7 +61,7 @@ def status(request):
         days = (timezone.now() - i.created_date).days
         if i.is_free:
             i.created_date = timezone.now()
-            stat_people.append({"id": i.id, "name": i.name, "surname": i.surname, "sum": i.sum, "status": "ЕСТ, БЕСПЛАТНИК"})
+            stat_people.append({"id": i.id, "name": i.name, "surname": i.surname, "sum": i.sum, "status": "ЕСТ, ЛЬГОТНИК"})
         elif i.is_weak:
             i.created_date = timezone.now()
             stat_people.append({"id": i.id, "name": i.name, "surname": i.surname, "sum": i.sum, "status": "БОЛЕЕТ"})

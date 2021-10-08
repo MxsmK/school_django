@@ -13,7 +13,7 @@
         <tr>
             <td>{{ person.name }}</td>
             <td>{{ person.surname }}</td>
-            {% if person.status != "ЕСТ, БЕСПЛАТНИК" %}
+            {% if person.status != "ЕСТ, ЛЬГОТНИК" %}
                 {% if person.status != "БОЛЕЕТ" %}
                     <td>{{ person.sum }}</td>
                 {% else %}
